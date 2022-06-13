@@ -1,0 +1,343 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+
+    line-height: 1.5;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+
+    background-color: rgb(14, 12, 12);
+    background-image: url("../animation/assets/home/background-home-mobile.jpg");
+}
+
+:root {
+    --slider-height: 50vh;
+    --slider-width: 70vw;
+    --slider-width-sm: 15vw;
+    --radio-btn-color: antiquewhite;
+}
+
+/* utility functions */
+
+.background-image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+
+.grid {
+    display: grid;
+    gap: var(--gap, 1rem);
+}
+
+.sr-only {
+    display: none;
+}
+
+/* links */
+
+
+
+a {
+    outline: none;
+    border: none;
+    display: inline-block;
+    color: antiquewhite;
+    position: relative;
+    z-index: 10;
+    padding-inline: 1rem;
+    font-size: 20px;
+    cursor: grab;
+
+}
+
+
+
+ a::after {    
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  margin-top: 2px;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: var(--radio-btn-color);
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+  
+
+ a:hover::after { 
+  width: 100%; 
+  left: 0; 
+}
+
+/* Primary header */
+
+.logo {
+    margin: 2rem;
+}
+
+.primary-header {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.primary-navigation {
+    padding: 0;
+    margin: 0;
+
+    background-color: hsl(0, 0%, 0%, 0.75);
+}
+
+.mobile-nav-toggle {
+    display: none;
+}
+
+.primary-navigation a > span {
+    font-weight: 700;
+    margin-inline-end: .75em;
+    color: antiquewhite;
+}
+
+.primary-navigation a {
+    color: antiquewhite;
+}
+
+.resize-animation-stopper * {
+    transition: none !important;
+    animation: none !important;
+}
+
+
+
+/* slider */
+
+.slider{
+    width: var(--slider-width);
+    height: var(--slider-height);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .slides{
+    width: 500%;
+    height: var(--slider-height);
+    display: flex;
+  }
+  
+  .slides input{
+    display: none;
+  }
+  
+  .slide{
+    width: 20%;
+    transition: 2s;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+
+  }
+  
+  .slide img{
+    /* width: var(--slider-width); */
+    width: 50%;
+    height: var(--slider-height);
+    height: 50%;
+   
+  }
+
+
+  
+  .slide-description {
+   
+      padding: 1rem 2rem;
+
+      border-radius: 20px;
+      background: linear-gradient(to top, hsl(0, 0%, 100%, 0.1), transparent);
+      backdrop-filter: blur(1rem);
+      color: antiquewhite;
+  }
+  /*css for manual slide navigation*/
+  
+  .navigation-manual{
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .manual-btn{
+    border: 2px solid var(--radio-btn-color);
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+    display: none;
+  }
+  
+  .manual-btn:not(:last-child){
+    margin-right: 40px;
+  }
+  
+  .manual-btn:hover{
+    background: var(--radio-btn-color);
+  }
+  
+  #radio1:checked ~ .first{
+    margin-left: 0;
+  }
+  
+  #radio2:checked ~ .first{
+    margin-left: -20%;
+  }
+  
+  #radio3:checked ~ .first{
+    margin-left: -40%;
+  }
+  
+  #radio4:checked ~ .first{
+    margin-left: -60%;
+  }
+  
+  /*css for automatic navigation*/
+  
+  .navigation-auto{
+    position: absolute;
+    display: flex;
+    width: var(--slider-width);
+    justify-content: center;
+    margin-top: 460px;
+  }
+  
+  .navigation-auto li{
+    border: 2px solid var(--radio-btn-color);
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+  }
+  
+  .navigation-auto li:not(:last-child){
+    margin-right: 40px;
+  }
+  
+  #radio1:checked ~ .navigation-auto .auto-btn1,
+  #radio2:checked ~ .navigation-auto .auto-btn2,
+  #radio3:checked ~ .navigation-auto .auto-btn3,
+  #radio4:checked ~ .navigation-auto .auto-btn4 {
+    background: var(--radio-btn-color);
+  }
+
+/* end slider */
+
+@supports (backdrop-filter: blur(1rem)) {
+    .primary-navigation {  
+        background-color: hsl(0, 0%, 100%, 0.1);
+        backdrop-filter: blur(1rem);
+    }
+}
+
+@media (max-width: 35em) {
+    .primary-navigation {
+        --gap: 3em;
+
+        position: fixed;
+        z-index: 1000;
+        inset: 0 0 0 30%;
+
+        flex-direction: column;
+        padding: min(30vh, 10rem) 2rem;
+
+        transform: translateX(100%);
+        transition: transform 350ms ease-in-out;
+    }
+
+    .primary-navigation[data-visible="true"] {
+        transform: translateX(0%);
+    }
+
+    .mobile-nav-toggle {
+        display: block;
+        position: absolute;
+        background-color: transparent;
+        background-image: url("../animation/assets/shared/icon-hamburger.svg");
+        border: 0;
+        width: 2rem;
+        aspect-ratio: 1;
+        top: 2rem;
+        right: 2rem;
+        z-index: 9999;
+    }
+
+    .mobile-nav-toggle[aria-expanded="true"] {
+        background-image: url("../animation/assets/shared/icon-close.svg");
+    }
+}
+
+@media (min-width: 35em) and (max-width: 55em) {
+    .primary-navigation a > span[aria-hidden] {
+        display: none;
+    }
+}
+
+@media (min-width: 35em) {
+
+    body {
+        background-image: url("../animation/assets/home/background-home-desktop.jpg");
+    }
+    .primary-navigation {
+        --gap: clamp(1.5rem, 5vw, 3rem);
+        padding-block: 2rem;
+        padding-inline: clamp(3rem, 10vw ,10rem);
+    }
+
+   .slider {
+       width: 20vw;
+   }
+    .slide img {
+        width: var(--slider-width-sm);
+
+    }
+
+    .navigation-auto {
+        width: var(--slider-width-sm);
+    }
+}
