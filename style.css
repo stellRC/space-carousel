@@ -195,10 +195,21 @@ i {
 }
 
 .slide img {
-	/* width: var(--slider-width); */
 	width: 50%;
-	height: var(--slider-height);
 	height: 50%;
+
+  	animation: 4s infinite grow alternate;
+
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(.5);
+  }
 }
 
 .slide-description {
