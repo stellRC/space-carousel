@@ -1,118 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Space Carousel</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Space Carousel</title>
 
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-    
-    <script src="https://kit.fontawesome.com/b4e73b0fbe.js" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="style.css" />
+		<script src="script.js" defer></script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
-</head>
-<body class="background-image flex">
-    <header class="primary-header flex">
-        <div>
-            <img src="assets/shared/logo.svg" alt="logo">
-        </div>
-        <button class="mobile-nav-toggle background-image" aria-controls="primary-navigation" aria-expanded="false">
-            <span class="sr-only">Menu</span>
-        </button>
-        <div class="dropdownBackground">
-            <span class="arrow"></span>
-          </div>
-        <nav class="top">
-           
-            <ul id="primary-navigation" data-visible="false" class="primary-navigation flex">
-                <li class="active">
-                    <a class="nav-link" href="#">
-                        <span aria-hidden="true">00</span>Home
-                    </a>
-                </li>
-                <li>
-                    <a class="nav-link" href="#">
-                        <span aria-hidden="true">01</span>Destination
-                    </a>
-                </li>
-                <li class="">
-                    <a class="nav-link" href="#">
-                        <span aria-hidden="true">02</span>Crew
-                    </a>
-                </li>
-                <li>
-                    <a class="nav-link" href="#">
-                        <span aria-hidden="true">03</span>Technology
-                    </a>
-                </li>
-                <div class="trigger-drop">
-                    <li>
-                        <a class="nav-link" href="#">
-                            <span aria-hidden="true">04</span>Interact
-                        </a>
-                        <ul class="dropdown dropdown3">
-                            <li>
-                                <a href="https://twitter.com/Yoda_bells">
-                                    <i class="social-button fa-brands fa-twitter"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/stellRC?tab=repositories">
-                                    <i class="social-button fa-brands fa-github-alt"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.linkedin.com/in/stella-arce-014255122/">
-                                    <i class="social-button fa-brands fa-linkedin"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                </div>
-            </ul>
-        </nav>
-    </header>
-    <main>
-    <div class="slider">
-        <ul class="slides">
-          <input type="radio" name="radio-btn" id="radio1">
-          <input type="radio" name="radio-btn" id="radio2">
-          <input type="radio" name="radio-btn" id="radio3">
-          <input type="radio" name="radio-btn" id="radio4">
-          <li class="slide first">
-            <img class="slide-img" src="assets/destination/image-europa.png" alt="Europa">
-            <span class="slide-description">Europa</span>
-          </li>
-          <li class="slide">
-            <img class="slide-img" src="assets/destination/image-mars.png" alt="Mars">
-            <span class="slide-description">Mars</span>
-          </li>
-          <li class="slide">
-            <img class="slide-img" src="assets/destination/image-moon.png" alt="Moon">
-            <span class="slide-description">Moon</span>
-          </li>
-          <li class="slide">
-            <img class="slide-img" src="assets/destination/image-titan.png" alt="Titan">
-            <span class="slide-description">Titan</span>
-          </li>
-          <ul class="navigation-auto">
-            <li class="auto-btn1"></li>
-            <li class="auto-btn2"></li>
-            <li class="auto-btn3"></li>
-            <li class="auto-btn4"></li>
-          </ul>
-        </ul>
-        <div class="navigation-manual">
-          <label for="radio1" class="manual-btn"></label>
-          <label for="radio2" class="manual-btn"></label>
-          <label for="radio3" class="manual-btn"></label>
-          <label for="radio4" class="manual-btn"></label>
-        </div>
-      </div>
-    </main>
-</body>
+		<script
+			src="https://kit.fontawesome.com/b4e73b0fbe.js"
+			crossorigin="anonymous"
+		></script>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body class="background-image flex">
+		<header class="primary-header flex">
+			<div>
+				<img src="assets/shared/logo.svg" alt="logo" />
+			</div>
+			<button
+				class="mobile-nav-toggle background-image"
+				aria-controls="primary-navigation"
+				aria-expanded="false"
+			>
+				<span class="sr-only">Menu</span>
+			</button>
+			<div class="dropdownBackground">
+				<span class="arrow"></span>
+			</div>
+			<nav class="top">
+				<ul
+					id="primary-navigation"
+					data-visible="false"
+					class="primary-navigation flex"
+				>
+					<li class="active">
+						<a class="nav-link" href="#">
+							<span aria-hidden="true">00</span>Home
+						</a>
+					</li>
+					<li>
+						<a class="nav-link" href="#">
+							<span aria-hidden="true">01</span>Destination
+						</a>
+					</li>
+					<li class="">
+						<a class="nav-link" href="#">
+							<span aria-hidden="true">02</span>Crew
+						</a>
+					</li>
+					<li>
+						<a class="nav-link" href="#">
+							<span aria-hidden="true">03</span>Technology
+						</a>
+					</li>
+					<div class="trigger-drop">
+						<li>
+							<a class="nav-link" href="#">
+								<span aria-hidden="true">04</span>Interact
+							</a>
+							<ul class="dropdown dropdown3">
+								<li>
+									<a href="https://twitter.com/Yoda_bells">
+										<i class="social-button fa-brands fa-twitter"></i>
+									</a>
+								</li>
+								<li>
+									<a href="https://github.com/stellRC?tab=repositories">
+										<i class="social-button fa-brands fa-github-alt"></i>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.linkedin.com/in/stella-arce-014255122/">
+										<i class="social-button fa-brands fa-linkedin"></i>
+									</a>
+								</li>
+							</ul>
+						</li>
+					</div>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<div class="slider">
+				<ul class="slides">
+					<input type="radio" name="radio-btn" id="radio1" />
+					<input type="radio" name="radio-btn" id="radio2" />
+					<input type="radio" name="radio-btn" id="radio3" />
+					<input type="radio" name="radio-btn" id="radio4" />
+					<li class="slide first">
+						<img
+							class="slide-img"
+							src="assets/destination/image-europa.png"
+							alt="Europa"
+						/>
+						<span class="slide-description">Europa</span>
+					</li>
+					<li class="slide">
+						<img
+							class="slide-img"
+							src="assets/destination/image-mars.png"
+							alt="Mars"
+						/>
+						<span class="slide-description">Mars</span>
+					</li>
+					<li class="slide">
+						<img
+							class="slide-img"
+							src="assets/destination/image-moon.png"
+							alt="Moon"
+						/>
+						<span class="slide-description">Moon</span>
+					</li>
+					<li class="slide">
+						<img
+							class="slide-img"
+							src="assets/destination/image-titan.png"
+							alt="Titan"
+						/>
+						<span class="slide-description">Titan</span>
+					</li>
+					<ul class="navigation-auto">
+						<li class="auto-btn1"></li>
+						<li class="auto-btn2"></li>
+						<li class="auto-btn3"></li>
+						<li class="auto-btn4"></li>
+					</ul>
+				</ul>
+				<div class="navigation-manual">
+					<label for="radio1" class="manual-btn"></label>
+					<label for="radio2" class="manual-btn"></label>
+					<label for="radio3" class="manual-btn"></label>
+					<label for="radio4" class="manual-btn"></label>
+				</div>
+			</div>
+		</main>
+	</body>
 </html>
