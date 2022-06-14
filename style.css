@@ -2,7 +2,7 @@
 *::before,
 *::after {
     box-sizing: border-box;
-    font-family: 'Kdam Thmor Pro', sans-serif;
+ 
 }
 
 ul {
@@ -31,10 +31,10 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-
+    font-family: 'Kdam Thmor Pro', sans-serif;
 
     background-color: rgb(14, 12, 12);
-    background-image: url("assets/home/background-home-mobile.jpg");
+    background-image: url("../animation/assets/home/background-home-mobile.jpg");
 }
 
 :root {
@@ -68,9 +68,11 @@ body {
 
 /* links */
 
+header {
+    margin-top: -10vh;
+}
 
-
-a {
+.nav-link {
     outline: none;
     border: none;
     display: inline-block;
@@ -85,7 +87,7 @@ a {
 
 
 
- a::after {    
+ .nav-link::after {    
   background: none repeat scroll 0 0 transparent;
   bottom: 0;
   content: "";
@@ -100,7 +102,7 @@ a {
 }
   
 
- a:hover::after { 
+ .nav-link:hover::after { 
   width: 100%; 
   left: 0; 
 }
@@ -140,6 +142,37 @@ a {
 .resize-animation-stopper * {
     transition: none !important;
     animation: none !important;
+}
+
+i {
+  color: antiquewhite;
+  font-size: 20px;
+}
+
+/* .social-button {
+  background-color: hsl(0, 0%, 0%, 0.5);
+  backdrop-filter: blur(2rem);
+  padding: 1vh 2vw;
+  margin: .5rem;
+} */
+
+.social-button {
+  border: 0;
+  cursor: pointer;
+  padding: .5em 1.25em;
+  margin: .25rem;
+
+  background-color: #7f5a83;
+  background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%);
+
+  background-size: 300%;
+
+  background-position: left;
+  transition: background-position 350ms;
+}
+
+.social-button:hover {
+  background-position: right;
 }
 
 
@@ -268,6 +301,82 @@ a {
 
 /* end slider */
 
+/* dropdown */
+
+
+  .trigger-drop > li > a > span {
+    display: inline-block;
+  }
+
+
+.trigger-drop {
+    /* important!*/
+    position: relative;
+    display: flex;
+    
+  }
+
+  .dropdown {
+    opacity: 0;
+    position: absolute;
+    overflow: hidden;
+    padding: 20px;
+    top: -70px;
+    padding: 3rem 0;
+    border-radius: 2px;
+    transition: all 0.5s;
+    transform: translateY(100px);
+    will-change: opacity;
+    display: none;
+  }
+
+  /* staged triggers */
+
+  .trigger-enter .dropdown {
+    display: block;
+
+  
+  }
+
+  .trigger-enter-active .dropdown {
+    opacity: 1;
+  }
+
+
+  .dropdownBackground {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    background-color: hsl(0, 0%, 100%, 0.1);
+        backdrop-filter: blur(1rem);
+    border-radius: 4px;
+    box-shadow: 0 50px 100px rgba(50,50,93,.1), 0 15px 35px rgba(50,50,93,.15), 0 5px 15px rgba(0,0,0,.1);
+    transition: all 0.3s, opacity 0.1s, transform 0.2s;
+    transform-origin: 50% 0;
+    display: flex;
+    justify-content: center;
+    opacity:0;
+    text-align: center;
+    visibility: hidden;
+  }
+
+  .dropdownBackground.open {
+    opacity: 1;
+  }
+
+  .arrow {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-color: hsl(0, 0%, 100%, 0.5);
+    backdrop-filter: blur(2rem);
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+
+
+
 @supports (backdrop-filter: blur(1rem)) {
     .primary-navigation {  
         background-color: hsl(0, 0%, 100%, 0.1);
@@ -298,7 +407,7 @@ a {
         display: block;
         position: absolute;
         background-color: transparent;
-        background-image: url("assets/shared/icon-hamburger.svg");
+        background-image: url("../animation/assets/shared/icon-hamburger.svg");
         border: 0;
         width: 2rem;
         aspect-ratio: 1;
@@ -308,9 +417,11 @@ a {
     }
 
     .mobile-nav-toggle[aria-expanded="true"] {
-        background-image: url("assets/shared/icon-close.svg");
+        background-image: url("../animation/assets/shared/icon-close.svg");
     }
 }
+
+
 
 @media (min-width: 35em) and (max-width: 55em) {
     .primary-navigation a > span[aria-hidden] {
@@ -321,7 +432,7 @@ a {
 @media (min-width: 35em) {
 
     body {
-        background-image: url("assets/home/background-home-desktop.jpg");
+        background-image: url("../animation/assets/home/background-home-desktop.jpg");
     }
     .primary-navigation {
         --gap: clamp(1.5rem, 5vw, 3rem);
