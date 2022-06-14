@@ -1,15 +1,15 @@
-const primaryNav = document.querySelector('.primary-navigation')
-const navToggle = document.querySelector('.mobile-nav-toggle')
+const primaryNav = document.querySelector('.primary-navigation');
+const navToggle = document.querySelector('.mobile-nav-toggle');
 
-const triggerParent = document.querySelector('.trigger-drop')
+const triggerParent = document.querySelector('.trigger-drop');
 const trigger = document.querySelector('.trigger-drop > li');
-const background = document.querySelector('.dropdownBackground')
-const nav = document.querySelector('.top')
+const background = document.querySelector('.dropdownBackground');
+const nav = document.querySelector('.top');
 
-const slideImages = document.querySelectorAll('.slide-image')
+const slideImages = document.querySelectorAll('.slide-image');
 
 navToggle.addEventListener('click', () => {
-    const visibility = primaryNav.getAttribute('data-visible')
+    const visibility = primaryNav.getAttribute('data-visible');
 
     if (visibility === "false") {
         primaryNav.setAttribute('data-visible', true);
@@ -64,13 +64,13 @@ function handleEnter() {
         left: dropdownCoords.left - navCoords.left 
     };
 
-    background.style.setProperty('width', `${coords.width}px`)
-    background.style.setProperty('height', `${coords.height}px`)
-    background.style.setProperty('transform', `translate(${coords.left}px, ${coords.top}px)`)
+    background.style.setProperty('width', `${coords.width}px`);
+    background.style.setProperty('height', `${coords.height}px`);
+    background.style.setProperty('transform', `translate(${coords.left}px, ${coords.top}px)`);
 }
 
 function handleLeave() {
-    this.classList.remove('trigger-enter', 'trigger-enter-active')
+    this.classList.remove('trigger-enter', 'trigger-enter-active');
     background.classList.remove('open');
 }
 
